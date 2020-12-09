@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TO DO</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			
+			background-color: #cafde8;
+		}
+		.mine{
+			text-align: center;
+			justify-content: center;
+			display: flex;
+			padding: 15px;
+			margin: 10px;
+			width: 50%;
+			border-color: blue;
+		}
+		.pzl{
+
+             margin: 10px;
+             padding: 15px;
+             font-size: 30px;
+             text-transform: capitalize;
+		}
+	</style>
+</head>
+<body>
+	<h1>YOUR TO DO LIST IS AS FOLLOWS</h1>
+	<div class="todo">
+		<input class = "mine" type="text" id="item" placeholder="Enter your todo here...">
+
+		<div id="display-items" class="pzl">
+			<ol id="items">
+				
+
+			</ol>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		var todos = window.localStorage.getItem("todos");
+		var todoItems = todos != null ? JSON.parse(todos) : [];
+
+		renderItems();
+		document.getElementById("item").addEventListener("keyup", function(e) {
+			if (e.keyCode != 13) {
+				return false;
+			}
+			var todo = {};
+			todo.name = document.getElementById("item").value;
+			todo.isComplete = false;
+			todoItems.push(todo);
+			document.getElementById("item").value = "";
+			saveTodoItems();
+			renderItems();
+		});
+
+
+		function renderItems()
+		{
+			document.getElementById("items").innerHTML = "";
+				todoItems.forEach(function (item) {
+					console.log(item);
+					var checked = item.isComplete ? "checked" : "";
+
+				document.getElementById("items").innerHTML += `<li>
+				<input type="checkbox" ${checked} onClick="markAsComplete('${item.name}')"  class="is-complete"/>
+				 ${item.name} </li>`
+					});
+		}
+
+		function markAsComplete(name)
+		{
+			todoItems.forEach(function (item) {
+					if (item.name == name) {
+						item.isComplete = ! item.isComplete;
+						return true;
+					}
+			});
+
+			saveTodoItems();
+		}
+
+		function saveTodoItems() 
+		{
+			window.localStorage.setItem("todos", JSON.stringify(todoItems));
+		}
+	</script>
+</body>
+</html>

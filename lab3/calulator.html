@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<title>CALCULATOR</title>
+	<style type="text/css">
+		body{
+			text-align: center;
+
+			background-color: black;
+   			min-height:40px;
+   			min-width:40px;
+			}
+			.cal{
+			background-color: #404040;
+			margin : auto;
+			width: 23%;
+			border: solid 2px;
+			border-color: white;
+			border-radius: 5px;	
+			min-height: 400px;
+			padding: 15px;
+			min-width:40px;
+
+			}
+		input[type=text]{
+			background-color: white;
+			color: white;
+			width:297px;
+			padding: : 0px;
+			font-size: 22px;
+			font-weight: bold;
+			border-radius: 5px;
+			border:none;
+			height: 40px;
+			color: #607d8b;
+			}
+		input[type=button]{
+
+			min-width:57px;
+			padding: 0px;
+			font-weight: bold;
+			min-height: 35px;
+			background: #A9BCF5;
+			border: none;
+			color: black;
+			}
+			#eql{
+			min-width: 297px;
+			}
+			#btn0{
+			  min-width:116px;
+			}
+		.viewport{
+            zoom: 5.0;
+            width: extend-to-zoom;
+       		 }
+        @-ms-viewport{
+            width: extend-to-zoom;
+            zoom: 5.0;
+        }
+        
+        }
+	</style>
+</head>
+<body>
+	<div class ="cal">
+	<form class="mine" name=calcform>
+		<input type=text name=txt1 disabled style="text-align:right;" ><br><br>
+		<input type=button name=delbtn value=C onclick="txt1.value=''">
+		<input type=button name=backbtn value=« onclick="back()">
+		<input type=button name=perbtn value=% onclick="percentage()">
+		<input type=button name=divbtn value=÷ onclick="displnum('/')">
+		<input type=button name=btnmul value=× onclick="displnum('*')"><br><br>
+		<input type=button name=addbtn value=+ onclick="displnum(addbtn.value)">
+		<input type=button name=btn7 value=7 onclick="displnum(btn7.value)">
+		<input type=button name=btn8 value=8 onclick="displnum(btn8.value)">
+		<input type=button name=btn9 value=9  onclick="displnum(btn9.value)">
+		<input type=button name=powbtn value=x² onclick="square()"><br><br>
+		<input type=button name=subbtn value=- onclick="displnum(subbtn.value)">
+		<input type=button name=btn4 value=4 onclick="displnum(btn4.value)">
+		<input type=button name=btn5 value=5 onclick="displnum(btn5.value)">
+		<input type=button name=btn6 value=6 onclick="displnum(btn6.value)">
+		<input type=button name=sqrtbtn value=√ onclick="txt1.value=Math.sqrt(txt1.value)"><br><br>
+		<input type=button name=facbtn value=! onclick="factorial()">
+		<input type=button name=btn1 value=1 onclick="displnum(btn1.value)">
+		<input type=button name=btn2 value=2 onclick="displnum(btn2.value)">
+		<input type=button name=btn3 value=3 onclick="displnum(btn3.value)">
+		<input type=button name=pibtn value=π onclick="displnum(Math.PI)"><br><br>
+		<input type=button name=recbtn value=1/x onclick="recipocal()">
+		<input type=button name=btn0 value=0 onclick="displnum(btn0.value)" id="btn0">
+		<input type=button name=potbtn value=. onclick="displnum(potbtn.value)">
+		<input type=button name=ebtn value=e onclick="displnum(Math.E)"><br><br>
+		<input type=button name=eqlbtn value== onclick="txt1.value=eval(txt1.value)" id="eql">
+	</form>
+	<script type="text/javascript">
+		function displnum(n1)
+		  {
+		  calcform.txt1.value=calcform.txt1.value+n1;
+		  }
+	  function square(){
+		  var exp = calcform.txt1.value;
+		  if(exp){
+		    calcform.txt1.value=exp*exp
+		  }
+		  }
+	  function back(){
+		    var exp = calcform.txt1.value;
+		     calcform.txt1.value = exp.substring(0,exp.length-1)
+		  }
+	  function percentage(){
+		  var exp = calcform.txt1.value;
+		  calcform.txt1.value = exp*0.01
+		  }
+	  function factorial(){
+		  var exp = calcform.txt1.value;
+		  var fact = 1;
+		  for(var i=exp; i>=1; i--){
+		    fact = fact * i;
+		  }
+		  calcform.txt1.value = fact
+		  }
+	  function recipocal(){
+		  var exp = calcform.txt1.value;
+		  calcform.txt1.value = 1/exp
+		  }
+	</script>
+    </div>
+
+</body>
+</html>
