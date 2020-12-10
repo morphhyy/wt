@@ -1,0 +1,4 @@
+table, th, td {
+    border: solid 2px black;
+    font-size: larger;
+}
