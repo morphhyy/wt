@@ -1,0 +1,44 @@
+#plox{
+    float: right;
+    line-height: 15px;
+    margin-right: 35%;
+}
+.selection{
+    padding: 5px 5px;
+    width: 400px;
+    line-height: 15px;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10;
+}
+.selection:hover{
+    border: 2px solid black;
+}
+.selected{
+    border: 2px solid black;
+}
+a{
+    margin: 10;
+    text-decoration: none;
+}
+.price{
+    margin-right: 50px;
+    float:left;
+}
+#cart{
+    color:white;
+    background-color:green;
+    width: 40%;
+    height: 50px;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    border-radius: 15px;
+}
+#buy{
+    color:black;
+    background-color:yellow;
+    width: 40%;
+    height: 50px;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    border-radius: 15px;
+}
