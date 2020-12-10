@@ -1,0 +1,46 @@
+<!-- 2) Demonstrate the use of HTML form elements using both HTML & CSS. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="2.css">
+    <title>Register</title>
+</head>
+<body>
+    <form action="register.html">
+        <label for="fname">
+        <strong>First Name :</strong>
+        <input type="text" id="fname" required>
+    </label>
+
+    <label for="lname">
+        <strong>Last Name :</strong>  
+        <input type="text" id="lname" required>
+    </label>
+
+    <br><br>
+    <label for="email">
+        <strong>Email :</strong>
+        <input type="email" required id="email">
+    </label>
+<br><br>
+    <label for="pwd">
+        <strong>Password :</strong>
+        <input type="password" id="pwd" required>
+    </label>
+<br><br>
+    <label for="gender">
+        <strong>Gender :</strong> 
+        <input type="radio" id="gender" name="gender">
+        Male
+        <input type="radio" id="gender" name="gender">
+        Female
+        <input type="radio" id="gender" name="gender">
+        Other
+    </label>
+<br><br>
+<input id='submit' type="submit" value="Register">
+</form>
+</body>
+</html>
