@@ -1,1 +1,1 @@
-# College Assignments over here!
+# Web Technology Assignments!
