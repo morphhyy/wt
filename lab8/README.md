@@ -43,7 +43,8 @@ id INT AUTO_INCREMENT PRIMARY KEY,
    last_name VARCHAR(100) NOT NULL,
    email VARCHAR(50) NOT NULL,
    password VARCHAR(20) NOT NULL,
-   date DATETIME;
+   date DATETIME
+   );
 ```
 
 ## Delete / Drop Table
