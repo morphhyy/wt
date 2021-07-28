@@ -1,6 +1,6 @@
 ## Import MYSQL DATABASE
 
-First, log in to MySQL as root to create new databases:
+First, log in to MySQL as root or any user to create new databases:
 ```sql
 mysql -u root -p
 ```
